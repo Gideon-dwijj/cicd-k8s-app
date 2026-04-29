@@ -1,5 +1,7 @@
-FROM python:3.9
+cat <<EOF > Dockerfile
+FROM python:3.9-alpine
 WORKDIR /app
 COPY . .
-RUN pip install -r requirements.txt
+RUN pip install flask
 CMD ["python", "app.py"]
+EOF
